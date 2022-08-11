@@ -2,8 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
-            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    lazy-init为getbean得到对象后后再创建容器-->
     <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl" lazy-init="true"/>
-
 </beans>
