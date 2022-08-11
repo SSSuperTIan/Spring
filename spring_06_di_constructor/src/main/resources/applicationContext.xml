@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
+        <constructor-arg name="databaseName" value="myusq"></constructor-arg>
+        <constructor-arg name="connectionNum" value="1"></constructor-arg>
+
+    </bean>
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">
+    <!--    通过setter传参数-->
+    <!--    <property name="bookDao" ref="bookDao"></property>-->
+    <!--        通过构造参数传参数-->
+        <constructor-arg name="bookDao" ref="bookDao"></constructor-arg>
+        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
+    </bean>
+
+    <!--
+    标准书写
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
+        根据构造方法参数名称注入
+        <constructor-arg name="connectionNum" value="10"/>
+        <constructor-arg name="databaseName" value="mysql"/>
+    </bean>
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean>
+-->
+<!--
+    解决形参名称的问题，与形参名不耦合
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
+        根据构造方法参数类型注入
+        <constructor-arg type="int" value="10"/>
+        <constructor-arg type="java.lang.String" value="mysql"/>
+    </bean>
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"/>
+
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">
+        <constructor-arg name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookDao"/>
+    </bean>-->
+
+<!--    &lt;!&ndash;解决参数类型重复问题，使用位置解决参数匹配&ndash;&gt;-->
+<!--    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">-->
+<!--        &lt;!&ndash;根据构造方法参数位置注入&ndash;&gt;-->
+<!--        <constructor-arg index="0" value="mysql"/>-->
+<!--        <constructor-arg index="1" value="100"/>-->
+<!--    </bean>-->
+<!--    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"/>-->
+
+<!--    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">-->
+<!--        <constructor-arg name="userDao" ref="userDao"/>-->
+<!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
+<!--    </bean>-->
+</beans>
