@@ -6,7 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("com.itheima")
-//@PropertySource加载properties配置文件
-@PropertySource({"jdbc.properties"})
+@PropertySource("classpath:jdbc.properties")
 public class SpringConfig {
 }

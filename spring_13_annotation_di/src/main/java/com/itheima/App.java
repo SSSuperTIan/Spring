@@ -9,7 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+        AnnotationConfigApplicationContext ctx = new
+                AnnotationConfigApplicationContext(SpringConfig.class);
         BookService bookService = ctx.getBean(BookService.class);
         bookService.save();
     }
