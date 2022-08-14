@@ -7,11 +7,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-        BookDao bookDao = (BookDao) ctx.getBean("bookDao");
-        System.out.println(bookDao);
-        //按类型获取bean
+       ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext_1.xml");
+       BookDao bookDao = (BookDao)ctx.getBean("bookDao");
+       bookDao.save();
         BookService bookService = ctx.getBean(BookService.class);
+        BookService bookService1 = (BookService) ctx.getBean("bookService");
         System.out.println(bookService);
+        System.out.println(bookService1);
     }
 }
