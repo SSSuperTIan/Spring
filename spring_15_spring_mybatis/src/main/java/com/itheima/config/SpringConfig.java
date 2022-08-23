@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("com.itheima")
-//@PropertySource：加载类路径jdbc.properties文件
+//@PropertySource("jdbc.properties")
 @PropertySource("classpath:jdbc.properties")
 @Import({JdbcConfig.class,MybatisConfig.class})
 public class SpringConfig {
