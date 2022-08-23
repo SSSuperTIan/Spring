@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -18,12 +19,14 @@ public class AccountServiceTestCase {
 
     @Test
     public void testFindById(){
-        Account ac = accountService.findById(2);
+        Account ac = accountService.findById(1);
+        System.out.println(ac);
     }
 
     @Test
     public void testFindAll(){
         List<Account> all = accountService.findAll();
+        System.out.println(all);
     }
 
 }
