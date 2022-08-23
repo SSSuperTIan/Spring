@@ -9,21 +9,24 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class DataAdvice {
-    @Pointcut("execution(boolean com.itheima.service.*Service.*(*,*))")
+
+    @Pointcut("execution(boolean com.itheima.service.*Service.openURL(..))")
     private void servicePt(){}
 
-    @Around("DataAdvice.servicePt()")
-    public Object trimStr(ProceedingJoinPoint pjp) throws Throwable {
-        Object[] args = pjp.getArgs();
-        for (int i = 0; i < args.length; i++) {
-            //判断参数是不是字符串
-            if(args[i].getClass().equals(String.class)){
-                args[i] = args[i].toString().trim();
+    @Around("servicePt()")
+    public Object trimString(ProceedingJoinPoint pjt) {
+        Object proceed;
+        try {
+            Object[] args = pjt.getArgs();
+            for (int i = 0; i < args.length; i++) {
+                if (args[i].getClass().isInstance("")) {
+                    args[i] = args[i].toString().trim();
+                }
             }
+            proceed = pjt.proceed(args);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
         }
-        Object ret = pjp.proceed(args);
-        return ret;
+        return proceed;
     }
-
-
 }
