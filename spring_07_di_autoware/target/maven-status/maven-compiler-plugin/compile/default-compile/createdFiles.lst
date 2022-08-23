@@ -1,0 +1,5 @@
+com\itheima\dao\impl\BookDaoImpl.class
+com\itheima\AppForDIAutoware.class
+com\itheima\dao\BookDao.class
+com\itheima\service\impl\BookServiceImpl.class
+com\itheima\service\BookService.class

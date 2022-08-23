@@ -1,0 +1,6 @@
+com\itheima\service\impl\BookServiceImpl.class
+com\itheima\service\BookService.class
+com\itheima\dao\impl\BookDaoImpl.class
+com\itheima\AppForLifeCycle2.class
+com\itheima\dao\BookDao.class
+com\itheima\AppForLifeCycle.class

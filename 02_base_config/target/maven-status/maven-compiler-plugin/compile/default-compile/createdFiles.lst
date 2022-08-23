@@ -1,0 +1,7 @@
+org\example\AppForInstanceBook.class
+org\example\service\impl\BookServiceImpl.class
+org\example\App2.class
+org\example\dao\BookDao.class
+org\example\App.class
+org\example\service\BookService.class
+org\example\dao\impl\BookDaoImpl.class

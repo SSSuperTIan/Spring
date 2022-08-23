@@ -1,0 +1,4 @@
+com\itheima\dao\impl\BookDaoImpl.class
+com\itheima\App.class
+com\itheima\dao\BookDao.class
+com\itheima\AppForBeanFactory.class

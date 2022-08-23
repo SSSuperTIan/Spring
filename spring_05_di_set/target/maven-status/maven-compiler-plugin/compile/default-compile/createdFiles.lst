@@ -1,0 +1,7 @@
+com\itheima\service\impl\BookServiceImpl.class
+com\itheima\dao\UserDao.class
+com\itheima\service\BookService.class
+com\itheima\AppForDISet.class
+com\itheima\dao\impl\BookDaoImpl.class
+com\itheima\dao\BookDao.class
+com\itheima\dao\impl\UserDaoImpl.class

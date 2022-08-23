@@ -1,0 +1,7 @@
+com\itheima\service\impl\BookServiceImpl.class
+com\itheima\service\BookService.class
+com\itheima\dao\impl\BookDaoImpl.class
+com\itheima\dao\impl\BookDaoImpl2.class
+com\itheima\App.class
+com\itheima\dao\BookDao.class
+com\itheima\config\SpringConfig.class
